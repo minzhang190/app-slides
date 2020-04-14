@@ -18,11 +18,14 @@ function cursor(style) {
 }
 
 function welldone() {
-    var image = preload.getResult('welldone');
+    var backgroundImage = preload.getResult('background');
+    var backgroundBitmap = new createjs.Bitmap(backgroundImage);
+    var image = preload.getResult('final');
     var bitmap = new createjs.Bitmap(image);
     if (previousContainer) {
         stage.removeChild(previousContainer);
     }
+    stage.addChild(backgroundBitmap);
     stage.addChild(bitmap);
 }
 
@@ -45,9 +48,15 @@ function question(e) {
 
     var container = new createjs.Container();
 
-    var questionImage = preload.getResult('question');
-    var questionBitmap = new createjs.Bitmap(questionImage);
-    container.addChild(questionBitmap);
+    var backgroundImage = preload.getResult('background');
+    var backgroundBitmap = new createjs.Bitmap(backgroundImage);
+    container.addChild(backgroundBitmap);
+
+    var boxImage = preload.getResult('box');
+    var boxBitmap = new createjs.Bitmap(boxImage);
+    boxBitmap.x = 650;
+    boxBitmap.y = 190;
+    container.addChild(boxBitmap);
 
     var questionText = new createjs.Text(questionLine, questionFont, questionColor);
     questionText.scale = Math.min(1000 / questionText.getMeasuredWidth(), 100 / questionText.getMeasuredHeight());
@@ -124,7 +133,7 @@ function question(e) {
                 bitmap.x = 210 - image.width * bitmapScale / 2;
                 bitmap.y = 650 - image.height * bitmapScale / 2;
                 container.addChild(bitmap);
-                createjs.Sound.play('good').on('complete');
+                createjs.Sound.play('good');
             });
         });
 
@@ -222,13 +231,12 @@ function start() {
         document.fonts.ready.then(play);
     });
     preload.loadManifest([
-        {id: 'background', src: 'resources/background.png', type: createjs.Types.IMAGE},
+        {id: 'background', src: prefix + 'background.png', type: createjs.Types.IMAGE},
         {id: 'correct', src: 'resources/correct.wav', type: createjs.Types.SOUND},
         {id: 'good', src: 'resources/good.wav', type: createjs.Types.SOUND},
         {id: 'mark', src: 'resources/mark.png', type: createjs.Types.IMAGE},
-        {id: 'next', src: 'resources/next.png', type: createjs.Types.IMAGE},
-        {id: 'question', src: 'resources/question.png', type: createjs.Types.IMAGE},
-        {id: 'welldone', src: 'resources/welldone.png', type: createjs.Types.IMAGE},
+        {id: 'box', src: 'resources/box.png', type: createjs.Types.IMAGE},
+        {id: 'final', src: 'resources/final.png', type: createjs.Types.IMAGE},
     ], false);
 
     data.forEach(function(card, idx) {
