@@ -27,6 +27,8 @@ function welldone() {
     }
     stage.addChild(backgroundBitmap);
     stage.addChild(bitmap);
+
+    gtag('event', 'slides-welldone', {event_category: 'app-slides'});
 }
 
 function hitArea(text) {
@@ -122,6 +124,7 @@ function question(e) {
                 bitmap.x = 590 - image.width * bitmapScale / 2;
                 bitmap.y = 295 + nr * 185 - image.height * bitmapScale / 2;
                 container.addChild(bitmap);
+                gtag('event', 'slides-incorrect', {event_category: 'app-slides', event_label: data[info.index].pinyin});
                 return;
             }
 
@@ -135,6 +138,8 @@ function question(e) {
                 container.addChild(bitmap);
                 createjs.Sound.play('good');
             });
+
+            gtag('event', 'slides-correct', {event_category: 'app-slides', event_label: data[info.index].pinyin});
         });
 
         container.addChild(answerText);
@@ -146,6 +151,8 @@ function question(e) {
     stage.addChild(container);
     previousContainer = container;
     var previous = current++;
+
+    gtag('event', 'slides-question', {event_category: 'app-slides', event_label: data[previous].pinyin});
 }
 
 function card() {
@@ -209,6 +216,8 @@ function card() {
             });
         }, 800);
     });
+
+    gtag('event', 'slides-card', {event_category: 'app-slides', event_label: data[previous].pinyin});
 }
 
 function play() {
