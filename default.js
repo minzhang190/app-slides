@@ -9,7 +9,7 @@ var pinyinColor = "#3366ff";
 var englishFont = "1000px 'Gochi Hand'";
 var englishColor = "#7030a0";
 
-var questionLine = "What is this?";
+var questionLine = "Zhè shì shénme?";
 var questionFont = "1000px 'Gochi Hand'";
 var questionColor = "#3366ff";
 

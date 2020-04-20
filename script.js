@@ -12,6 +12,7 @@ createjs.Ticker.addEventListener('tick', stage);
 
 var current = 0;
 var previousContainer = null;
+var blocked = false;
 
 function cursor(style) {
     canvas.style.cursor = style;
@@ -156,6 +157,10 @@ function question(e) {
 }
 
 function card() {
+    if (blocked) {
+        return;
+    }
+
     if (current == data.length) {
         stage.removeEventListener('click', card);
         current = 0;
@@ -206,15 +211,18 @@ function card() {
     stage.addChild(container);
     previousContainer = container;
     var previous = current++;
+    blocked = true;
 
     createjs.Sound.play('sound1-' + previous).on('complete', function() {
         setTimeout(function() {
             createjs.Sound.play('sound2-' + previous).on('complete', function() {
                 setTimeout(function() {
-                    createjs.Sound.play('sound3-' + previous);
-                }, 800);
+                    createjs.Sound.play('sound3-' + previous).on('complete', function() {
+                        blocked = false;
+                    });
+                }, 500);
             });
-        }, 800);
+        }, 500);
     });
 
     gtag('event', 'slides-card', {event_category: 'app-slides', event_label: data[previous].pinyin});
