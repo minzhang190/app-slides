@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <script>var prefix = location.search ? location.search.substring(1).split('&')[0] : '';</script>
+
+        <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+        <script src="https://code.createjs.com/1.0.0/tweenjs.min.js"></script>
+        <script src="https://code.createjs.com/1.0.0/soundjs.min.js"></script>
+        <script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script>
+
+        <title>Fruits</title>
+
+        <style id="style"></style>
+    </head>
+    <body>
+        <canvas id="canvas" width="1200" height="900"></canvas>
+        <script>['default.js', prefix + 'data.js', 'resize.js', 'script.js'].forEach(function(url) {
+            var script = document.createElement('script');
+            script.src = url;
+            script.async = false;
+            document.body.appendChild(script);
+        });</script>
+    </body>
+</html>
