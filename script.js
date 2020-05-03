@@ -275,10 +275,7 @@ cover.addChild(coverBitmap);
 
 var coverText = new createjs.Text(title, titleFont, titleColor);
 coverText.scale = Math.min(1000 / coverText.getMeasuredWidth(), 150 / coverText.getMeasuredHeight());
-coverText.textAlign = 'center';
-coverText.textBaseline = 'middle';
-coverText.x = 600;
-coverText.y = 150;
+Object.assign(coverText, titleProps);
 coverText.shadow = new createjs.Shadow('#808080', 10, 10, 20);
 cover.addChild(coverText);
 stage.addChild(previousContainer);

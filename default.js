@@ -2,6 +2,12 @@ var title = 'Title';
 
 var titleFont = "1000px 'Gochi Hand'";
 var titleColor = "#3366ff";
+var titleProps = {
+    textAlign: 'center',
+    textBaseline: 'middle',
+    x: 600,
+    y: 150
+};
 
 var pinyinFont = "1000px 'Gochi Hand'";
 var pinyinColor = "#3366ff";
