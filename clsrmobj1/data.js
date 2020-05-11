@@ -1,5 +1,7 @@
 var title = "Jiàoshì Yòngpǐn (1)";
 
+titleProps.y = 175;
+
 var data = [
     {
         "image": "assets/5e9cc6ec83dd7905aa16c67f.png",

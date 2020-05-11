@@ -1,5 +1,8 @@
 var title = "Jiàoshì Yòngpǐn (2)";
 
+var titleColor = "#ffffff";
+titleProps.y = 200;
+
 var data = [
     {
         "image": "assets/5e9cc6f283dd7905aa16c687.png",
