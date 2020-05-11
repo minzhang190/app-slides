@@ -3,6 +3,8 @@ var title = "Hǎiyáng Dòngwù";
 var titleColor = "#000000";
 titleProps.y = 450;
 
+var englishColor = "#ffffff";
+
 var data = [
     {
         "image": "assets/5eb791ab14a1892be47ea89b.png",
