@@ -1,7 +1,5 @@
 var title = "Shuǐguǒ";
 
-var questionLine = 'Zhè shì shénme shuǐguǒ?';
-
 var data = [
     {
         "image": "assets/5e8bf93af6082885ff046aa6.png",
