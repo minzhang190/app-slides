@@ -1,6 +1,6 @@
 var title = 'Title';
 
-var titleFont = "1000px 'Gochi Hand'";
+var titleFont = "1000px 'Dekko'";
 var titleColor = "#3366ff";
 var titleProps = {
     textAlign: 'center',
@@ -9,20 +9,20 @@ var titleProps = {
     y: 150
 };
 
-var pinyinFont = "1000px 'Gochi Hand'";
+var pinyinFont = "1000px 'Dekko'";
 var pinyinColor = "#3366ff";
 
-var englishFont = "1000px 'Gochi Hand'";
+var englishFont = "1000px 'Dekko'";
 var englishColor = "#7030a0";
 
 var questionLine = "Zhè shì shénme?";
-var questionFont = "1000px 'Gochi Hand'";
+var questionFont = "1000px 'Dekko'";
 var questionColor = "#3366ff";
 
-var answerFont = "bold 1000px 'Architects Daughter'";
+var answerFont = "bold 1000px 'Andika'";
 var answerColors = ["#ff0000", "#00b050", "#ed7d31"];
 
-var importFonts = "@import url('https://fonts.googleapis.com/css?family=Architects+Daughter|Gochi+Hand&display=swap');";
+var importFonts = "@import url('https://fonts.googleapis.com/css?family=Andika|Dekko&display=swap');";
 
 var data = [
     {"image": "assets/backpack.png", "sound1": "assets/backpack.mp3", "sound2": "assets/backpack.mp3", "sound3": "assets/backpack.mp3", "pinyin": "backpack", "english": "backpack"},
